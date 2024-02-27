@@ -12,7 +12,7 @@ function onFormSubmit(e) {
         resetForm();    
 }
 
-//Retrieve the data
+//Retrieving the data
 function readFormData() {
     var formData = {};
     formData["productCode"] = document.getElementById("productCode").value;
@@ -22,7 +22,7 @@ function readFormData() {
     return formData;
 }
 
-//Insert the data
+//Inserting the data
 function insertNewRecord(data) {
     var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
@@ -38,7 +38,7 @@ function insertNewRecord(data) {
         cell4.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
 }
 
-//Edit the data
+//Editing the data
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("productCode").value = selectedRow.cells[0].innerHTML;
@@ -53,7 +53,7 @@ function updateRecord(formData) {
     selectedRow.cells[3].innerHTML = formData.perPrice;
 }
 
-//Delete the data
+//Deleting the data
 function onDelete(td) {
     if (confirm('Do you want to delete this record?')) {
         row = td.parentElement.parentElement;
@@ -62,7 +62,7 @@ function onDelete(td) {
     }
 }
 
-//Reset the data
+//Resetting the data
 function resetForm() {
     document.getElementById("productCode").value = '';
     document.getElementById("product").value = '';
